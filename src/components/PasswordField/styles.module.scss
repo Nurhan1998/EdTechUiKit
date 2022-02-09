@@ -1,0 +1,60 @@
+@import "src/assets/styles/variables";
+
+.input {
+  padding-left: 9px;
+  height: 46px;
+  width: 100%;
+  background: $darkGrey;
+  border: none;
+  border-radius: 8px;
+
+  &:focus-visible {
+    border: none;
+  }
+
+  &::placeholder {
+    color: $textGreyPlaceholder
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    color: $textColorGrey;
+  }
+}
+
+.eye-password {
+  position: absolute;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &.dirty {
+    top: 49%
+  }
+
+  &.clean {
+    top: 62%;
+  }
+
+  &.visible {
+    color: white;
+    background-image: url(../../assets/img/svg/eye.svg);
+  }
+
+  &.invisible {
+    background-image: url(../../assets/img/svg/eye-slash.svg);
+  }
+}
+
+.password-field-wr {
+
+}

@@ -1,0 +1,20 @@
+.userCardSection {
+  display: flex;
+  height: 69px;
+  flex-direction: column;
+  width: 300px;
+}
+
+@media screen and (min-width: $tablet-media)  and (max-width: $lg-media){
+  .userCardSection {
+    width: 270px;
+    &_content {
+      .progressbar {
+        &-text {
+          font-size: 14px;
+          font-weight: $semiBold;
+        }
+      }
+    }
+  }
+}

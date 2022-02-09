@@ -1,0 +1,27 @@
+@import '../../assets/styles/variables';
+
+.input {
+    padding-left: 10px;
+    height: 46px;
+    width: 100%;
+    background: $darkGrey;
+    border: none;
+    border-radius: 8px;
+
+    &:focus-visible {
+      border: none;
+    }
+
+    &::placeholder {
+      color: $textGreyPlaceholder
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled {
+      color: $textColorGrey;
+    }
+  }
+
