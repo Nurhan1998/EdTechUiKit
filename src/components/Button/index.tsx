@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import cn from 'classnames';
+import classes from 'styles.module.scss';
 
 import { IButtonProps } from './types';
-import classes from './styles.module.scss';
 
 const Button: FC<IButtonProps> = props => {
   const { children, className, ...rest } = props;

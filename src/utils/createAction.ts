@@ -8,9 +8,9 @@ const createAction =
   <T extends Record<string, unknown> | boolean = never>(
     actionType: string
   ): TUtilType<T> =>
-  payload => ({
-    type: actionType,
-    payload,
-  });
+    payload => ({
+      type: actionType,
+      payload,
+    });
 
 export default createAction;

@@ -5,11 +5,13 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var get = require('lodash/get');
 var isBoolean = require('lodash/isBoolean');
 var jsxRuntime = require('react/jsx-runtime');
+var classes$3 = require('styles.module.scss');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var isBoolean__default = /*#__PURE__*/_interopDefaultLegacy(isBoolean);
+var classes__default = /*#__PURE__*/_interopDefaultLegacy(classes$3);
 
 var createAction = function (actionType) {
     return function (payload) { return ({
@@ -186,58 +188,35 @@ var classnames = createCommonjsModule(function (module) {
 }());
 });
 
-function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var css_248z$3 = ".styles-module_most-button__FgGOj {\n  color: white;\n  background-color: #49A057;\n  border: none;\n  margin-top: 20px;\n  border-radius: 8px;\n  width: 280px;\n  height: 40px; }\n  .styles-module_most-button__FgGOj:active {\n    color: #b8c3d5; }\n";
-var classes$3 = {"most-button":"styles-module_most-button__FgGOj"};
-styleInject(css_248z$3);
-
 var Button = function (props) {
     var children = props.children, className = props.className, rest = __rest(props, ["children", "className"]);
-    return (jsxRuntime.jsx("button", __assign({}, rest, { className: classnames(classes$3.mostButton, className) }, { children: children }), void 0));
+    return (jsxRuntime.jsx("button", __assign({}, rest, { className: classnames(classes__default["default"].mostButton, className) }, { children: children }), void 0));
 };
 
-var css_248z$2 = ".styles-module_dialog-wrapper__yk6LW {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: 9999;\n  background-color: rgba(0, 0, 0, 0.4);\n  overflow: hidden;\n  justify-content: center;\n  align-items: center; }\n  .styles-module_dialog-wrapper__yk6LW.styles-module_visible__fV-L1 {\n    display: flex; }\n  .styles-module_dialog-wrapper__yk6LW.styles-module_invisible__zjc8Y {\n    display: none; }\n  .styles-module_dialog-wrapper__yk6LW .styles-module_dialog-content__-Ci-7 {\n    position: relative;\n    padding: 74px 21px 21px 21px;\n    width: 613px;\n    height: 198px;\n    background: #fafafa;\n    border-radius: 8px;\n    opacity: 1;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-between; }\n    .styles-module_dialog-wrapper__yk6LW .styles-module_dialog-content__-Ci-7 .styles-module_text__Z0eOq {\n      margin: 0 0 40px 0;\n      color: #85888B; }\n    .styles-module_dialog-wrapper__yk6LW .styles-module_dialog-content__-Ci-7 .styles-module_action-wrapper__ZcSwV {\n      display: flex;\n      justify-content: space-between;\n      width: 100%; }\n      .styles-module_dialog-wrapper__yk6LW .styles-module_dialog-content__-Ci-7 .styles-module_action-wrapper__ZcSwV button {\n        width: 280px;\n        height: 46px;\n        border: 1px solid #000000;\n        border-radius: 8px;\n        cursor: pointer; }\n        .styles-module_dialog-wrapper__yk6LW .styles-module_dialog-content__-Ci-7 .styles-module_action-wrapper__ZcSwV button:first-child {\n          background-color: #232323;\n          color: #fafafa; }\n        .styles-module_dialog-wrapper__yk6LW .styles-module_dialog-content__-Ci-7 .styles-module_action-wrapper__ZcSwV button:last-child {\n          background-color: #fafafa;\n          color: #232323; }\n    .styles-module_dialog-wrapper__yk6LW .styles-module_dialog-content_close__SILig::after {\n      top: 15px;\n      right: 15px;\n      position: absolute;\n      content: \"\\00d7\";\n      cursor: pointer; }\n";
 var classes$2 = {"dialog-wrapper":"styles-module_dialog-wrapper__yk6LW","visible":"styles-module_visible__fV-L1","invisible":"styles-module_invisible__zjc8Y","dialog-content":"styles-module_dialog-content__-Ci-7","text":"styles-module_text__Z0eOq","action-wrapper":"styles-module_action-wrapper__ZcSwV","dialog-content_close":"styles-module_dialog-content_close__SILig"};
-styleInject(css_248z$2);
 
 var Dialog = function (props) {
     var _a;
     var text = props.text, _b = props.confirmText, confirmText = _b === void 0 ? 'Accept' : _b, _c = props.rejectText, rejectText = _c === void 0 ? 'Decline' : _c, isOpen = props.isOpen, className = props.className, close = props.close, onConfirmAction = props.onConfirmAction, onRejectAction = props.onRejectAction;
+    var handleConfirm = function () {
+        if (onConfirmAction) {
+            onConfirmAction();
+        }
+        close();
+    };
+    var handleReject = function () {
+        if (onRejectAction) {
+            onRejectAction();
+        }
+        close();
+    };
     return (jsxRuntime.jsx("div", __assign({ className: classnames(classes$2.dialogWrapper, className, (_a = {},
             _a[classes$2.invisible] = !isOpen,
             _a[classes$2.visible] = isOpen,
-            _a)) }, { children: jsxRuntime.jsxs("div", __assign({ className: classes$2.dialogContent }, { children: [jsxRuntime.jsx("span", { className: classes$2.dialogContent_close, onClick: close }, void 0), jsxRuntime.jsx("p", __assign({ className: classes$2.text }, { children: text }), void 0), jsxRuntime.jsxs("div", __assign({ className: classes$2.actionWrapper }, { children: [jsxRuntime.jsx("button", __assign({ onClick: onConfirmAction }, { children: confirmText }), void 0), jsxRuntime.jsx("button", __assign({ onClick: onRejectAction }, { children: rejectText }), void 0)] }), void 0)] }), void 0) }), void 0));
+            _a)) }, { children: jsxRuntime.jsxs("div", __assign({ className: classes$2.dialogContent }, { children: [jsxRuntime.jsx("span", { className: classes$2.dialogContent_close, onClick: close }, void 0), jsxRuntime.jsx("p", __assign({ className: classes$2.text }, { children: text }), void 0), jsxRuntime.jsxs("div", __assign({ className: classes$2.actionWrapper }, { children: [jsxRuntime.jsx("button", __assign({ onClick: handleConfirm }, { children: confirmText }), void 0), jsxRuntime.jsx("button", __assign({ onClick: handleReject }, { children: rejectText }), void 0)] }), void 0)] }), void 0) }), void 0));
 };
 
-var css_248z$1 = ".styles-module_input__KRJnF {\n  padding-left: 10px;\n  height: 46px;\n  width: 100%;\n  background: #A5A5A5;\n  border: none;\n  border-radius: 8px; }\n  .styles-module_input__KRJnF:focus-visible {\n    border: none; }\n  .styles-module_input__KRJnF::placeholder {\n    color: #D2D2D2; }\n  .styles-module_input__KRJnF:focus {\n    outline: none; }\n  .styles-module_input__KRJnF:disabled {\n    color: #818181; }\n";
 var classes$1 = {"input":"styles-module_input__KRJnF"};
-styleInject(css_248z$1);
 
 var Input = function (_a) {
     var inputProps = _a.inputProps, value = _a.value, onChange = _a.onChange;
@@ -245,9 +224,7 @@ var Input = function (_a) {
     return (jsxRuntime.jsx("input", { type: type, placeholder: placeholder, onChange: onChange, onFocus: onFocus, onBlur: onBlur, value: value, disabled: disabled, className: classnames(classes$1.input, className) }, void 0));
 };
 
-var css_248z = ".styles-module_inputWrapper__0d8w8 {\n  margin: 20px 0;\n  width: 100%;\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .styles-module_inputWrapper__0d8w8 .styles-module_label__-RvO9 {\n    align-self: flex-start;\n    margin: 0 0 5px 0;\n    font-size: 12px;\n    font-family: Rubik;\n    color: white; }\n  .styles-module_inputWrapper__0d8w8 .styles-module_error__pXe6s {\n    font-size: 12px;\n    color: red;\n    margin: 5px 0px 0px 0px;\n    align-self: flex-start; }\n";
 var classes = {"inputWrapper":"styles-module_inputWrapper__0d8w8","label":"styles-module_label__-RvO9","error":"styles-module_error__pXe6s"};
-styleInject(css_248z);
 
 var InputWrapper = function (props) {
     var error = props.error, label = props.label, isTouched = props.isTouched, children = props.children, className = props.className, value = props.value;

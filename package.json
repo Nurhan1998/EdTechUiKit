@@ -1,6 +1,6 @@
 {
   "name": "@most/ui-kit",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "keywords": [],
   "description": "UI library of components and utils for MOST sites",
   "main": "dist/index.min.js",

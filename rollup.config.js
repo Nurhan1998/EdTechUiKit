@@ -6,10 +6,11 @@ import external from 'rollup-plugin-peer-deps-external';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
+
 import pkg from './package.json';
 
 export default {
-  input: `src/index.tsx`,
+  input: 'src/index.tsx',
   output: [
     {
       file: pkg.main,
@@ -39,6 +40,8 @@ export default {
     external(),
     postcss({
       modules: true,
+      // Or with custom file name, it will generate file relative to bundle.js in v3
+      extract: 'index.scss'
     }),
     // Allow json resolution
     json(),
