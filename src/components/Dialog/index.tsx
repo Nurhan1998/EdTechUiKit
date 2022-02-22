@@ -3,7 +3,6 @@ import cn from 'classnames';
 import { IDialog } from './types';
 import classes from './styles.module.scss';
 
-
 const Dialog = (props: IDialog): JSX.Element => {
   const {
     text,
