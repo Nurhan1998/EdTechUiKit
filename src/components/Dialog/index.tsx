@@ -16,6 +16,20 @@ const Dialog = (props: IDialog): JSX.Element => {
     onRejectAction
   } = props;
 
+  const handleConfirm = (): void => {
+    if(onConfirmAction) {
+      onConfirmAction();
+    }
+    close();
+  };
+
+  const handleReject = (): void => {
+    if(onRejectAction) {
+      onRejectAction();
+    }
+    close();
+  };
+
   return (
     <div className={cn(classes.dialogWrapper, className, {
       [classes.invisible]: !isOpen,
@@ -25,8 +39,8 @@ const Dialog = (props: IDialog): JSX.Element => {
         <span className={classes.dialogContent_close} onClick={close}/>
         <p className={classes.text}>{text}</p>
         <div className={classes.actionWrapper}>
-          <button onClick={onConfirmAction}>{confirmText}</button>
-          <button onClick={onRejectAction}>{rejectText}</button>
+          <button onClick={handleConfirm}>{confirmText}</button>
+          <button onClick={handleReject}>{rejectText}</button>
         </div>
       </div>
     </div>
