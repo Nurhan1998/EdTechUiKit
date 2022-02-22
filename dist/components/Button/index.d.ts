@@ -1,5 +1,4 @@
-import { FC } from 'react';
-import { IButtonProps } from './types';
-declare const Button: FC<IButtonProps>;
+import { ButtonHTMLAttributes, FC } from 'react';
+declare const Button: FC<ButtonHTMLAttributes<HTMLButtonElement>>;
 export default Button;
 //# sourceMappingURL=index.d.ts.map

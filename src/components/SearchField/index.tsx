@@ -3,10 +3,10 @@ import cn from 'classnames';
 import WhiteSearchIcon from '../Icons/WhiteSearchIcon';
 import SearchIcon from '../Icons/SearchIcon';
 
-import { ISearch } from './types';
+import { ISearchField } from './types';
 import classes from './styles.module.scss';
 
-const SearchField = (props: ISearch): JSX.Element => {
+const SearchField = (props: ISearchField): JSX.Element => {
   const {
     color,
     onButtonClick,

@@ -1,6 +1,6 @@
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 
-export interface ISearch {
+export interface ISearchField {
   color?: string;
   className?: string;
   type?: string;

@@ -5,13 +5,14 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var get = require('lodash/get');
 var isBoolean = require('lodash/isBoolean');
 var jsxRuntime = require('react/jsx-runtime');
-var classes$3 = require('styles.module.scss');
+var classes$8 = require('styles.module.scss');
+var react = require('react');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var isBoolean__default = /*#__PURE__*/_interopDefaultLegacy(isBoolean);
-var classes__default = /*#__PURE__*/_interopDefaultLegacy(classes$3);
+var classes__default = /*#__PURE__*/_interopDefaultLegacy(classes$8);
 
 var createAction = function (actionType) {
     return function (payload) { return ({
@@ -193,7 +194,7 @@ var Button = function (props) {
     return (jsxRuntime.jsx("button", __assign({}, rest, { className: classnames(classes__default["default"].mostButton, className) }, { children: children }), void 0));
 };
 
-var classes$2 = {"dialog-wrapper":"styles-module_dialog-wrapper__yk6LW","visible":"styles-module_visible__fV-L1","invisible":"styles-module_invisible__zjc8Y","dialog-content":"styles-module_dialog-content__-Ci-7","text":"styles-module_text__Z0eOq","action-wrapper":"styles-module_action-wrapper__ZcSwV","dialog-content_close":"styles-module_dialog-content_close__SILig"};
+var classes$7 = {"dialog-wrapper":"styles-module_dialog-wrapper__yk6LW","visible":"styles-module_visible__fV-L1","invisible":"styles-module_invisible__zjc8Y","dialog-content":"styles-module_dialog-content__-Ci-7","text":"styles-module_text__Z0eOq","action-wrapper":"styles-module_action-wrapper__ZcSwV","dialog-content_close":"styles-module_dialog-content_close__SILig"};
 
 var Dialog = function (props) {
     var _a;
@@ -210,31 +211,101 @@ var Dialog = function (props) {
         }
         close();
     };
-    return (jsxRuntime.jsx("div", __assign({ className: classnames(classes$2.dialogWrapper, className, (_a = {},
-            _a[classes$2.invisible] = !isOpen,
-            _a[classes$2.visible] = isOpen,
-            _a)) }, { children: jsxRuntime.jsxs("div", __assign({ className: classes$2.dialogContent }, { children: [jsxRuntime.jsx("span", { className: classes$2.dialogContent_close, onClick: close }, void 0), jsxRuntime.jsx("p", __assign({ className: classes$2.text }, { children: text }), void 0), jsxRuntime.jsxs("div", __assign({ className: classes$2.actionWrapper }, { children: [jsxRuntime.jsx("button", __assign({ onClick: handleConfirm }, { children: confirmText }), void 0), jsxRuntime.jsx("button", __assign({ onClick: handleReject }, { children: rejectText }), void 0)] }), void 0)] }), void 0) }), void 0));
+    return (jsxRuntime.jsx("div", __assign({ className: classnames(classes$7.dialogWrapper, className, (_a = {},
+            _a[classes$7.invisible] = !isOpen,
+            _a[classes$7.visible] = isOpen,
+            _a)) }, { children: jsxRuntime.jsxs("div", __assign({ className: classes$7.dialogContent }, { children: [jsxRuntime.jsx("span", { className: classes$7.dialogContent_close, onClick: close }, void 0), jsxRuntime.jsx("p", __assign({ className: classes$7.text }, { children: text }), void 0), jsxRuntime.jsxs("div", __assign({ className: classes$7.actionWrapper }, { children: [jsxRuntime.jsx("button", __assign({ onClick: handleConfirm }, { children: confirmText }), void 0), jsxRuntime.jsx("button", __assign({ onClick: handleReject }, { children: rejectText }), void 0)] }), void 0)] }), void 0) }), void 0));
 };
 
-var classes$1 = {"input":"styles-module_input__KRJnF"};
+var classes$6 = {"input":"styles-module_input__KRJnF"};
 
 var Input = function (_a) {
     var inputProps = _a.inputProps, value = _a.value, onChange = _a.onChange;
     var className = inputProps.className, type = inputProps.type, placeholder = inputProps.placeholder, onFocus = inputProps.onFocus, onBlur = inputProps.onBlur, disabled = inputProps.disabled;
-    return (jsxRuntime.jsx("input", { type: type, placeholder: placeholder, onChange: onChange, onFocus: onFocus, onBlur: onBlur, value: value, disabled: disabled, className: classnames(classes$1.input, className) }, void 0));
+    return (jsxRuntime.jsx("input", { type: type, placeholder: placeholder, onChange: onChange, onFocus: onFocus, onBlur: onBlur, value: value, disabled: disabled, className: classnames(classes$6.input, className) }, void 0));
 };
 
-var classes = {"inputWrapper":"styles-module_inputWrapper__0d8w8","label":"styles-module_label__-RvO9","error":"styles-module_error__pXe6s"};
+var classes$5 = {"inputWrapper":"styles-module_inputWrapper__0d8w8","label":"styles-module_label__-RvO9","error":"styles-module_error__pXe6s"};
 
 var InputWrapper = function (props) {
     var error = props.error, label = props.label, isTouched = props.isTouched, children = props.children, className = props.className, value = props.value;
-    return (jsxRuntime.jsxs("div", __assign({ className: classnames(className, classes.inputWrapper) }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.label }, { children: label }), void 0), children, (error && value && isTouched) && error.map(function (item, idx) { return (jsxRuntime.jsx("p", __assign({ className: classes.error }, { children: item }), idx)); })] }), void 0));
+    return (jsxRuntime.jsxs("div", __assign({ className: classnames(className, classes$5.inputWrapper) }, { children: [jsxRuntime.jsx("p", __assign({ className: classes$5.label }, { children: label }), void 0), children, (error && value && isTouched) && error.map(function (item, idx) { return (jsxRuntime.jsx("p", __assign({ className: classes$5.error }, { children: item }), idx)); })] }), void 0));
+};
+
+var classes$4 = {"input":"styles-module_input__t1a3B","eye-password":"styles-module_eye-password__ILHLV","dirty":"styles-module_dirty__9C5Ot","clean":"styles-module_clean__D6asa","visible":"styles-module_visible__CHTxB","invisible":"styles-module_invisible__gQTw3"};
+
+var PasswordField = function (props) {
+    var _a;
+    var inputProps = props.inputProps, error = props.error, onChange = props.onChange, value = props.value;
+    var type = inputProps.type, className = inputProps.className, rest = __rest(inputProps, ["type", "className"]);
+    var _b = react.useState(false), isPasswordVisible = _b[0], setIsPasswordVisible = _b[1];
+    var _c = react.useState(type || 'text'), fieldType = _c[0], setFieldType = _c[1];
+    var passwordToggleType = react.useCallback(function () {
+        setIsPasswordVisible(!isPasswordVisible);
+        if (fieldType === 'text') {
+            setFieldType('password');
+        }
+        else {
+            setFieldType('text');
+        }
+    }, [setIsPasswordVisible, isPasswordVisible, fieldType, setFieldType]);
+    return (jsxRuntime.jsxs("div", __assign({ className: classnames(classes$4.passwordFieldWr, className) }, { children: [jsxRuntime.jsx("input", __assign({ type: fieldType, onChange: onChange, value: value, className: classes$4.input }, rest), void 0), jsxRuntime.jsx("span", { className: classnames(classes$4.eyePassword, (_a = {},
+                    _a[classes$4.invisible] = !isPasswordVisible,
+                    _a[classes$4.visible] = isPasswordVisible,
+                    _a[classes$4.dirty] = error === null || error === void 0 ? void 0 : error.length,
+                    _a[classes$4.clean] = !(error === null || error === void 0 ? void 0 : error.length),
+                    _a)), onClick: passwordToggleType }, void 0)] }), void 0));
+};
+
+var classes$3 = {"loader-container":"styles-module_loader-container__DRmDv","most-loader":"styles-module_most-loader__OaAs3","rotate":"styles-module_rotate__PheSR","rotate2":"styles-module_rotate2__o1aaP","loader":"styles-module_loader__mHr56"};
+
+var Preloader = function (_a) {
+    var className = _a.className;
+    return (jsxRuntime.jsx("div", __assign({ className: classnames(classes$3.loaderContainer, classes$3.mostLoader, className) }, { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", {}, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }), void 0));
+};
+
+var classes$2 = {"progressbar":"styles-module_progressbar__ACHMo","progressbar-wrapper":"styles-module_progressbar-wrapper__8AQMd","progressbar-inner_wrapper":"styles-module_progressbar-inner_wrapper__uV7J-","progressbar-text":"styles-module_progressbar-text__ydVvZ"};
+
+var ProgressBar = function (props) {
+    var current = props.current, max = props.max, _a = props.width, width = _a === void 0 ? 300 : _a, _b = props.color, color = _b === void 0 ? '#50C0E8' : _b, className = props.className;
+    return (jsxRuntime.jsxs("div", __assign({ className: classnames(classes$2.progressbar, className) }, { children: [jsxRuntime.jsx("div", __assign({ className: classes$2.progressbarWrapper, style: { width: width } }, { children: jsxRuntime.jsx("span", { className: classes$2.progressbarInner_wrapper, style: {
+                        width: "".concat(current / max * 100, "%"),
+                        backgroundColor: color
+                    } }, void 0) }), void 0), jsxRuntime.jsx("span", __assign({ className: classes$2.progressbarText }, { children: current }), void 0)] }), void 0));
+};
+
+/*eslint-disable max-len*/
+var WhiteSearchIcon = function () { return (jsxRuntime.jsxs("svg", __assign({ width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, { children: [jsxRuntime.jsx("path", { d: "M15.7138 6.8382C18.1647 9.28913 18.1647 13.2629 15.7138 15.7138C13.2629 18.1647 9.28913 18.1647 6.8382 15.7138C4.38727 13.2629 4.38727 9.28913 6.8382 6.8382C9.28913 4.38727 13.2629 4.38727 15.7138 6.8382", stroke: "#FFFFFF", strokeLinecap: "round", strokeLinejoin: "round" }, void 0), jsxRuntime.jsx("path", { d: "M19 19L15.71 15.71", stroke: "#FFFFFF", strokeLinecap: "round", strokeLinejoin: "round" }, void 0)] }), void 0)); };
+
+/*eslint-disable max-len*/
+var SearchIcon = function () { return (jsxRuntime.jsxs("svg", __assign({ width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, { children: [jsxRuntime.jsx("path", { d: "M15.7138 6.8382C18.1647 9.28913 18.1647 13.2629 15.7138 15.7138C13.2629 18.1647 9.28913 18.1647 6.8382 15.7138C4.38727 13.2629 4.38727 9.28913 6.8382 6.8382C9.28913 4.38727 13.2629 4.38727 15.7138 6.8382", stroke: "#85888B", strokeLinecap: "round", strokeLinejoin: "round" }, void 0), jsxRuntime.jsx("path", { d: "M19 19L15.71 15.71", stroke: "#85888B", strokeLinecap: "round", strokeLinejoin: "round" }, void 0)] }), void 0)); };
+
+var classes$1 = {"search-wrapper":"styles-module_search-wrapper__Qzz4K","search-icon":"styles-module_search-icon__UOF7-","search-input":"styles-module_search-input__W4W-i"};
+
+var SearchField = function (props) {
+    var color = props.color, onButtonClick = props.onButtonClick, className = props.className, rest = __rest(props, ["color", "onButtonClick", "className"]);
+    return (jsxRuntime.jsxs("div", __assign({ className: classnames(classes$1.searchWrapper, className) }, { children: [jsxRuntime.jsx("span", __assign({ onClick: onButtonClick, className: classes$1.searchIcon }, { children: color === 'white' ?
+                    jsxRuntime.jsx(WhiteSearchIcon, {}, void 0)
+                    :
+                        jsxRuntime.jsx(SearchIcon, {}, void 0) }), void 0), jsxRuntime.jsx("input", __assign({}, rest, { className: classes$1.searchInput }), void 0)] }), void 0));
+};
+
+var classes = {"userCardSection":"styles-module_userCardSection__X0uby","userCardSection_content":"styles-module_userCardSection_content__JTyTG","progressbar-text":"styles-module_progressbar-text__0S-si"};
+
+var CardInfoSection = function (_a) {
+    var children = _a.children, className = _a.className;
+    return (jsxRuntime.jsx("div", __assign({ className: classnames(classes.userCardSection, className) }, { children: children }), void 0));
 };
 
 exports.Button = Button;
 exports.Dialog = Dialog;
 exports.Input = Input;
 exports.InputWrapper = InputWrapper;
+exports.PasswordField = PasswordField;
+exports.Preloader = Preloader;
+exports.ProgressBar = ProgressBar;
+exports.SearchField = SearchField;
+exports.UserCardInfoSection = CardInfoSection;
 exports.buildFormData = buildFormData;
 exports.createAction = createAction;
 exports.createReducer = createReducer;
