@@ -5,14 +5,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var get = require('lodash/get');
 var isBoolean = require('lodash/isBoolean');
 var jsxRuntime = require('react/jsx-runtime');
-var classes$8 = require('styles.module.scss');
 var react = require('react');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var isBoolean__default = /*#__PURE__*/_interopDefaultLegacy(isBoolean);
-var classes__default = /*#__PURE__*/_interopDefaultLegacy(classes$8);
 
 var createAction = function (actionType) {
     return function (payload) { return ({
@@ -189,9 +187,11 @@ var classnames = createCommonjsModule(function (module) {
 }());
 });
 
+var classes$8 = {"most-button":"styles-module_most-button__FgGOj"};
+
 var Button = function (props) {
     var children = props.children, className = props.className, rest = __rest(props, ["children", "className"]);
-    return (jsxRuntime.jsx("button", __assign({}, rest, { className: classnames(classes__default["default"].mostButton, className) }, { children: children }), void 0));
+    return (jsxRuntime.jsx("button", __assign({}, rest, { className: classnames(classes$8.mostButton, className) }, { children: children }), void 0));
 };
 
 var classes$7 = {"dialog-wrapper":"styles-module_dialog-wrapper__yk6LW","visible":"styles-module_visible__fV-L1","invisible":"styles-module_invisible__zjc8Y","dialog-content":"styles-module_dialog-content__-Ci-7","text":"styles-module_text__Z0eOq","action-wrapper":"styles-module_action-wrapper__ZcSwV","dialog-content_close":"styles-module_dialog-content_close__SILig"};
