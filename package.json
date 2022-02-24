@@ -1,6 +1,6 @@
 {
   "name": "@most/ui-kit",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "keywords": [],
   "description": "UI library of components and utils for MOST sites",
   "main": "dist/index.min.js",
@@ -85,6 +85,7 @@
     "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-copy": "^3.4.0",
     "ts-jest": "^27.0.5",
     "typedoc": "^0.22.5",
     "typescript": "^4.4.3",

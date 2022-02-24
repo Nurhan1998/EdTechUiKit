@@ -47,11 +47,11 @@
 
   &.visible {
     color: white;
-    background-image: url(../../assets/img/svg/eye.svg);
+    background-image: url(./assets/images/svg/eye.svg);
   }
 
   &.invisible {
-    background-image: url(../../assets/img/svg/eye-slash.svg);
+    background-image: url(./assets/images/svg/eye-slash.svg);
   }
 }
 

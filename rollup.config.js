@@ -4,6 +4,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import external from 'rollup-plugin-peer-deps-external';
 import sourceMaps from 'rollup-plugin-sourcemaps';
+import copy from 'rollup-plugin-copy';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -37,6 +38,11 @@ export default {
     include: 'src/**',
   },
   plugins: [
+    copy({
+      targets: [
+        { src: 'src/assets/images', dest: 'dist/assets' },
+      ],
+    }),
     external(),
     postcss({
       modules: true,
