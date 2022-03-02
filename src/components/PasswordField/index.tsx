@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import cn from 'classnames';
 
-import classes from './styles.module.scss';
+import useStyles from './styles';
 import { IPasswordFieldProps } from './types';
 
 
@@ -13,6 +13,7 @@ const PasswordField = (props: IPasswordFieldProps): JSX.Element => {
     className,
     ...rest
   } = inputProps;
+  const { classes } = useStyles();
 
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const [fieldType, setFieldType] = useState<string>(type || 'text');

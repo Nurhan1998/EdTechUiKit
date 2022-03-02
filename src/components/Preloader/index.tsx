@@ -1,11 +1,12 @@
 import cn from 'classnames';
 
-import classes from './styles.module.scss';
+import useStyles from './styles';
 import { IPreloader } from './types';
 
-const Preloader = ({ className }: IPreloader): JSX.Element => (
-  <div className={cn(classes.loaderContainer, classes.mostLoader, className)}>
-    <div>
+const Preloader = ({ className }: IPreloader): JSX.Element => {
+  const { classes } = useStyles();
+  return (
+    <div className={cn(classes.loaderContainer, classes.mostLoader, className)}>
       <div>
         <div>
           <div>
@@ -14,7 +15,9 @@ const Preloader = ({ className }: IPreloader): JSX.Element => (
                 <div>
                   <div>
                     <div>
-                      <div></div>
+                      <div>
+                        <div></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -24,6 +27,6 @@ const Preloader = ({ className }: IPreloader): JSX.Element => (
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 export default Preloader;

@@ -1,7 +1,7 @@
 import cn from 'classnames';
 
 import { IDialog } from './types';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 
 const Dialog = (props: IDialog): JSX.Element => {
   const {
@@ -14,6 +14,7 @@ const Dialog = (props: IDialog): JSX.Element => {
     onConfirmAction,
     onRejectAction
   } = props;
+  const { classes } = useStyles();
 
   const handleConfirm = (): void => {
     if(onConfirmAction) {
@@ -35,7 +36,7 @@ const Dialog = (props: IDialog): JSX.Element => {
       [classes.visible]: isOpen,
     })}>
       <div className={classes.dialogContent}>
-        <span className={classes.dialogContent_close} onClick={close}/>
+        <span className={classes.close} onClick={close}/>
         <p className={classes.text}>{text}</p>
         <div className={classes.actionWrapper}>
           <button onClick={handleConfirm}>{confirmText}</button>

@@ -22,10 +22,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import cn from 'classnames';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 var Button = function (props) {
     var children = props.children, className = props.className, rest = __rest(props, ["children", "className"]);
-    return (_jsx("button", __assign({}, rest, { className: cn(classes.mostButton, className) }, { children: children }), void 0));
+    var classes = useStyles().classes;
+    return (_jsx("button", __assign({}, rest, { className: cn(classes.mostButton, className) }, { children: children })));
 };
 export default Button;
 //# sourceMappingURL=index.js.map

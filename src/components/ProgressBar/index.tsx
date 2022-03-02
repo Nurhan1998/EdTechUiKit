@@ -1,7 +1,7 @@
 import cn from 'classnames';
 
 import { IProgressBarProps } from './types';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 
 
 const ProgressBar = (props: IProgressBarProps): JSX.Element => {
@@ -12,19 +12,20 @@ const ProgressBar = (props: IProgressBarProps): JSX.Element => {
     color='#50C0E8',
     className
   } = props;
+  const { classes } = useStyles();
 
   return (
     <div className={cn(classes.progressbar, className)}>
       <div className={classes.progressbarWrapper} style={{ width: width }}>
         <span
-          className={classes.progressbarInner_wrapper}
+          className={classes.progressInnerWrapper}
           style={{
             width: `${current / max * 100}%`,
             backgroundColor: color
           }}
         />
       </div>
-      <span className={classes.progressbarText}>
+      <span className={classes.progressBarText}>
         {current}
       </span>
     </div>

@@ -1,7 +1,6 @@
 import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
 import resolve from 'rollup-plugin-node-resolve';
-import postcss from 'rollup-plugin-postcss';
 import external from 'rollup-plugin-peer-deps-external';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import copy from 'rollup-plugin-copy';
@@ -44,11 +43,6 @@ export default {
       ],
     }),
     external(),
-    postcss({
-      modules: true,
-      // Or with custom file name, it will generate file relative to bundle.js in v3
-      extract: 'index.scss'
-    }),
     // Allow json resolution
     json(),
     // Compile TypeScript files

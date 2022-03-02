@@ -24,13 +24,14 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import cn from 'classnames';
 import WhiteSearchIcon from '../Icons/WhiteSearchIcon';
 import SearchIcon from '../Icons/SearchIcon';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 var SearchField = function (props) {
     var color = props.color, onButtonClick = props.onButtonClick, className = props.className, rest = __rest(props, ["color", "onButtonClick", "className"]);
+    var classes = useStyles().classes;
     return (_jsxs("div", __assign({ className: cn(classes.searchWrapper, className) }, { children: [_jsx("span", __assign({ onClick: onButtonClick, className: classes.searchIcon }, { children: color === 'white' ?
-                    _jsx(WhiteSearchIcon, {}, void 0)
+                    _jsx(WhiteSearchIcon, {})
                     :
-                        _jsx(SearchIcon, {}, void 0) }), void 0), _jsx("input", __assign({}, rest, { className: classes.searchInput }), void 0)] }), void 0));
+                        _jsx(SearchIcon, {}) })), _jsx("input", __assign({}, rest, { className: classes.searchInput }))] })));
 };
 export default SearchField;
 //# sourceMappingURL=index.js.map

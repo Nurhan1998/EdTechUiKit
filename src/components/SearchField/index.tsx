@@ -4,7 +4,7 @@ import WhiteSearchIcon from '../Icons/WhiteSearchIcon';
 import SearchIcon from '../Icons/SearchIcon';
 
 import { ISearchField } from './types';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 
 const SearchField = (props: ISearchField): JSX.Element => {
   const {
@@ -13,6 +13,7 @@ const SearchField = (props: ISearchField): JSX.Element => {
     className,
     ...rest
   } = props;
+  const { classes } = useStyles();
 
   return (
     <div className={cn(classes.searchWrapper, className)}>

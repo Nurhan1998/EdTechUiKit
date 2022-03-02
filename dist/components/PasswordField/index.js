@@ -23,11 +23,12 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useCallback, useState } from 'react';
 import cn from 'classnames';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 var PasswordField = function (props) {
     var _a;
     var inputProps = props.inputProps, error = props.error, onChange = props.onChange, value = props.value;
     var type = inputProps.type, className = inputProps.className, rest = __rest(inputProps, ["type", "className"]);
+    var classes = useStyles().classes;
     var _b = useState(false), isPasswordVisible = _b[0], setIsPasswordVisible = _b[1];
     var _c = useState(type || 'text'), fieldType = _c[0], setFieldType = _c[1];
     var passwordToggleType = useCallback(function () {
@@ -39,12 +40,12 @@ var PasswordField = function (props) {
             setFieldType('text');
         }
     }, [setIsPasswordVisible, isPasswordVisible, fieldType, setFieldType]);
-    return (_jsxs("div", __assign({ className: cn(classes.passwordFieldWr, className) }, { children: [_jsx("input", __assign({ type: fieldType, onChange: onChange, value: value, className: classes.input }, rest), void 0), _jsx("span", { className: cn(classes.eyePassword, (_a = {},
+    return (_jsxs("div", __assign({ className: cn(classes.passwordFieldWr, className) }, { children: [_jsx("input", __assign({ type: fieldType, onChange: onChange, value: value, className: classes.input }, rest)), _jsx("span", { className: cn(classes.eyePassword, (_a = {},
                     _a[classes.invisible] = !isPasswordVisible,
                     _a[classes.visible] = isPasswordVisible,
                     _a[classes.dirty] = error === null || error === void 0 ? void 0 : error.length,
                     _a[classes.clean] = !(error === null || error === void 0 ? void 0 : error.length),
-                    _a)), onClick: passwordToggleType }, void 0)] }), void 0));
+                    _a)), onClick: passwordToggleType })] })));
 };
 export default PasswordField;
 //# sourceMappingURL=index.js.map
