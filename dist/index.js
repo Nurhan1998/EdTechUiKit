@@ -134,11 +134,6 @@ function __rest(s, e) {
     return t;
 }
 
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-}
-
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function unwrapExports (x) {
@@ -1353,7 +1348,7 @@ tssReact.createMakeAndWithStyles;
 tssReact.TssCacheProvider;
 tssReact.getTssDefaultEmotionCache;
 tssReact.GlobalStyles;
-var tssReact_5 = tssReact.keyframes;
+tssReact.keyframes;
 tssReact.createWithStyles;
 var tssReact_7 = tssReact.createMakeStyles;
 tssReact.useMergedClasses;
@@ -1406,7 +1401,7 @@ var useTheme = function () { return ({
 }); };
 var makeStyles = tssReact_7({ useTheme: useTheme }).makeStyles;
 
-var useStyles$8 = makeStyles()(function (_a) {
+var useStyles$7 = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         mostButton: {
@@ -1426,11 +1421,11 @@ var useStyles$8 = makeStyles()(function (_a) {
 
 var Button = function (props) {
     var children = props.children, className = props.className, rest = __rest(props, ["children", "className"]);
-    var classes = useStyles$8().classes;
+    var classes = useStyles$7().classes;
     return (jsxRuntime.jsx("button", __assign({}, rest, { className: classnames(classes.mostButton, className) }, { children: children })));
 };
 
-var useStyles$7 = makeStyles()(function (_a) {
+var useStyles$6 = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         dialogWrapper: {
@@ -1503,7 +1498,7 @@ var useStyles$7 = makeStyles()(function (_a) {
 var Dialog = function (props) {
     var _a;
     var text = props.text, _b = props.confirmText, confirmText = _b === void 0 ? 'Accept' : _b, _c = props.rejectText, rejectText = _c === void 0 ? 'Decline' : _c, isOpen = props.isOpen, className = props.className, close = props.close, onConfirmAction = props.onConfirmAction, onRejectAction = props.onRejectAction;
-    var classes = useStyles$7().classes;
+    var classes = useStyles$6().classes;
     var handleConfirm = function () {
         if (onConfirmAction) {
             onConfirmAction();
@@ -1522,7 +1517,7 @@ var Dialog = function (props) {
             _a)) }, { children: jsxRuntime.jsxs("div", __assign({ className: classes.dialogContent }, { children: [jsxRuntime.jsx("span", { className: classes.close, onClick: close }), jsxRuntime.jsx("p", __assign({ className: classes.text }, { children: text })), jsxRuntime.jsxs("div", __assign({ className: classes.actionWrapper }, { children: [jsxRuntime.jsx("button", __assign({ onClick: handleConfirm }, { children: confirmText })), jsxRuntime.jsx("button", __assign({ onClick: handleReject }, { children: rejectText }))] }))] })) })));
 };
 
-var useStyles$6 = makeStyles()(function (_a) {
+var useStyles$5 = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         input: {
@@ -1550,12 +1545,12 @@ var useStyles$6 = makeStyles()(function (_a) {
 
 var Input = function (_a) {
     var inputProps = _a.inputProps, value = _a.value, onChange = _a.onChange;
-    var classes = useStyles$6().classes;
+    var classes = useStyles$5().classes;
     var className = inputProps.className, type = inputProps.type, placeholder = inputProps.placeholder, onFocus = inputProps.onFocus, onBlur = inputProps.onBlur, disabled = inputProps.disabled;
     return (jsxRuntime.jsx("input", { type: type, placeholder: placeholder, onChange: onChange, onFocus: onFocus, onBlur: onBlur, value: value, disabled: disabled, className: classnames(classes.input, className) }));
 };
 
-var useStyles$5 = makeStyles()(function (_a) {
+var useStyles$4 = makeStyles()(function (_a) {
     var palette = _a.palette; _a.spacing; var mostFont = _a.mostFont;
     return ({
         inputWrapper: {
@@ -1584,11 +1579,11 @@ var useStyles$5 = makeStyles()(function (_a) {
 
 var InputWrapper = function (props) {
     var error = props.error, label = props.label, isTouched = props.isTouched, children = props.children, className = props.className, value = props.value;
-    var classes = useStyles$5().classes;
+    var classes = useStyles$4().classes;
     return (jsxRuntime.jsxs("div", __assign({ className: classnames(className, classes.inputWrapper) }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.label }, { children: label })), children, (error && value && isTouched) && error.map(function (item, idx) { return (jsxRuntime.jsx("p", __assign({ className: classes.error }, { children: item }), idx)); })] })));
 };
 
-var useStyles$4 = makeStyles()(function (_a) {
+var useStyles$3 = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         input: {
@@ -1646,7 +1641,7 @@ var PasswordField = function (props) {
     var _a;
     var inputProps = props.inputProps, error = props.error, onChange = props.onChange, value = props.value;
     var type = inputProps.type, className = inputProps.className, rest = __rest(inputProps, ["type", "className"]);
-    var classes = useStyles$4().classes;
+    var classes = useStyles$3().classes;
     var _b = react.useState(false), isPasswordVisible = _b[0], setIsPasswordVisible = _b[1];
     var _c = react.useState(type || 'text'), fieldType = _c[0], setFieldType = _c[1];
     var passwordToggleType = react.useCallback(function () {
@@ -1664,44 +1659,6 @@ var PasswordField = function (props) {
                     _a[classes.dirty] = error === null || error === void 0 ? void 0 : error.length,
                     _a[classes.clean] = !(error === null || error === void 0 ? void 0 : error.length),
                     _a)), onClick: passwordToggleType })] })));
-};
-
-var useStyles$3 = makeStyles()(function (_a) {
-    var palette = _a.palette, spacing = _a.spacing;
-    return ({
-        loaderDivMixin: {
-            borderRadius: spacing.circle,
-            padding: spacing.unit,
-            border: '2px solid transparent',
-            animation: 'rotate linear 3.5s infinite',
-        },
-        loaderContainer: {
-            position: 'relative',
-            margin: '75px auto',
-            width: '150px',
-            height: '150px',
-            display: 'block',
-            overflow: 'hidden'
-        },
-        div: {
-            height: '100%'
-        },
-        mostLoader: {
-            borderRadius: spacing.circle,
-            padding: spacing.sm,
-            animation: "".concat(tssReact_5(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    0% {\n      transform: rotate(0deg);\n      borderTopColor: ", "\n    }\n    50% {\n      transform: rotate(180deg);\n      borderTopColor: ", "\n    }\n    100% {\n      transform: rotate(360deg);\n      borderTopColor: ", "\n    }\n  "], ["\n    0% {\n      transform: rotate(0deg);\n      borderTopColor: ", "\n    }\n    50% {\n      transform: rotate(180deg);\n      borderTopColor: ", "\n    }\n    100% {\n      transform: rotate(360deg);\n      borderTopColor: ", "\n    }\n  "])), palette.darkGrey, palette.primary, palette.darkGrey), " 4s infinite linear")
-        },
-        loader: {
-            willChange: 'transform *'
-        }
-    });
-});
-var templateObject_1;
-
-var Preloader = function (_a) {
-    var className = _a.className;
-    var classes = useStyles$3().classes;
-    return (jsxRuntime.jsx("div", __assign({ className: classnames(classes.loaderContainer, classes.mostLoader, className) }, { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx("div", {}) }) }) }) }) }) }) }) }) }) })));
 };
 
 var useStyles$2 = makeStyles()(function (_a) {
@@ -1815,7 +1772,6 @@ exports.Dialog = Dialog;
 exports.Input = Input;
 exports.InputWrapper = InputWrapper;
 exports.PasswordField = PasswordField;
-exports.Preloader = Preloader;
 exports.ProgressBar = ProgressBar;
 exports.SearchField = SearchField;
 exports.UserCardInfoSection = CardInfoSection;

@@ -15,8 +15,6 @@ export { default as InputWrapper } from './components/InputWrapper';
 export { IInputWrapper } from './components/InputWrapper/types';
 export { default as PasswordField } from './components/PasswordField';
 export { IPasswordFieldProps } from './components/PasswordField/types';
-export { default as Preloader } from './components/Preloader';
-export { IPreloader } from './components/Preloader/types';
 export { default as ProgressBar } from './components/ProgressBar';
 export { IProgressBarProps } from './components/ProgressBar/types';
 export { default as SearchField } from './components/SearchField';
