@@ -62,7 +62,7 @@ const useStyles = makeStyles()(
         top: '15px',
         right: '15px',
         position: 'absolute',
-        content: '292C',
+        content: '"292C"',
         cursor: 'pointer'
       }
     }
