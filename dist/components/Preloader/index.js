@@ -11,10 +11,11 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import cn from 'classnames';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 var Preloader = function (_a) {
     var className = _a.className;
-    return (_jsx("div", __assign({ className: cn(classes.loaderContainer, classes.mostLoader, className) }, { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", {}, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }, void 0) }), void 0));
+    var classes = useStyles().classes;
+    return (_jsx("div", __assign({ className: cn(classes.loaderContainer, classes.mostLoader, className) }, { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", { children: _jsx("div", {}) }) }) }) }) }) }) }) }) }) })));
 };
 export default Preloader;
 //# sourceMappingURL=index.js.map

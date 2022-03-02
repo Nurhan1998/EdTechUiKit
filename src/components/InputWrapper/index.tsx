@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import cn from 'classnames';
 
-import classes from './styles.module.scss';
+import useStyles from './styles';
 import { IInputWrapper } from './types';
 
 const InputWrapper: FC<IInputWrapper> = props => {
@@ -13,6 +13,7 @@ const InputWrapper: FC<IInputWrapper> = props => {
     className,
     value
   } = props;
+  const { classes } = useStyles();
 
   return (
     <div className={cn(className, classes.inputWrapper)}>

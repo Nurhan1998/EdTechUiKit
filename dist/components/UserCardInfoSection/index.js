@@ -11,10 +11,11 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import cn from 'classnames';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 var CardInfoSection = function (_a) {
     var children = _a.children, className = _a.className;
-    return (_jsx("div", __assign({ className: cn(classes.userCardSection, className) }, { children: children }), void 0));
+    var classes = useStyles().classes;
+    return (_jsx("div", __assign({ className: cn(classes.userCardSection, className) }, { children: children })));
 };
 export default CardInfoSection;
 //# sourceMappingURL=index.js.map

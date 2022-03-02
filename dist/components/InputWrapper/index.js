@@ -11,10 +11,11 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import cn from 'classnames';
-import classes from './styles.module.scss';
+import useStyles from './styles';
 var InputWrapper = function (props) {
     var error = props.error, label = props.label, isTouched = props.isTouched, children = props.children, className = props.className, value = props.value;
-    return (_jsxs("div", __assign({ className: cn(className, classes.inputWrapper) }, { children: [_jsx("p", __assign({ className: classes.label }, { children: label }), void 0), children, (error && value && isTouched) && error.map(function (item, idx) { return (_jsx("p", __assign({ className: classes.error }, { children: item }), idx)); })] }), void 0));
+    var classes = useStyles().classes;
+    return (_jsxs("div", __assign({ className: cn(className, classes.inputWrapper) }, { children: [_jsx("p", __assign({ className: classes.label }, { children: label })), children, (error && value && isTouched) && error.map(function (item, idx) { return (_jsx("p", __assign({ className: classes.error }, { children: item }), idx)); })] })));
 };
 export default InputWrapper;
 //# sourceMappingURL=index.js.map

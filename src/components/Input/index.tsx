@@ -2,9 +2,10 @@ import cn from 'classnames';
 
 import { IInput } from 'components/Input/types';
 
-import classes from './styles.module.scss';
+import makeStyles from './styles';
 
 const Input = ({ inputProps, value, onChange }: IInput): JSX.Element => {
+  const { classes } = makeStyles();
   const {
     className,
     type,
