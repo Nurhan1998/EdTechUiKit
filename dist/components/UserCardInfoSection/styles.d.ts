@@ -1,5 +1,5 @@
 declare const useStyles: (params: void) => {
-    classes: Record<"userCardSection" | "@media screen and (min-width: $tablet-media)  and (max-width: $lg-media)", string>;
+    classes: Record<"userCardSection", string>;
     theme: import("../../styles/types").ITheme;
     css: import("tss-react").Css;
     cx: import("tss-react").Cx;
