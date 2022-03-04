@@ -62,7 +62,7 @@ var useStyles = makeStyles()(function (_a) {
                 top: '15px',
                 right: '15px',
                 position: 'absolute',
-                content: '"292C"',
+                content: 'X',
                 cursor: 'pointer'
             }
         }
