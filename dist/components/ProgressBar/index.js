@@ -13,7 +13,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import cn from 'classnames';
 import useStyles from './styles';
 var ProgressBar = function (props) {
-    var current = props.current, max = props.max, _a = props.width, width = _a === void 0 ? 300 : _a, _b = props.color, color = _b === void 0 ? '#50C0E8' : _b, className = props.className;
+    var current = props.current, max = props.max, _a = props.width, width = _a === void 0 ? 100 : _a, _b = props.color, color = _b === void 0 ? '#50C0E8' : _b, className = props.className;
     var classes = useStyles().classes;
     return (_jsxs("div", __assign({ className: cn(classes.progressbar, className) }, { children: [_jsx("div", __assign({ className: classes.progressbarWrapper, style: { width: width } }, { children: _jsx("span", { className: classes.progressInnerWrapper, style: {
                         width: "".concat(current / max * 100, "%"),

@@ -8,7 +8,7 @@ const ProgressBar = (props: IProgressBarProps): JSX.Element => {
   const {
     current,
     max,
-    width = 300,
+    width = 100,
     color='#50C0E8',
     className
   } = props;

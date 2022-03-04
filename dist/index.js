@@ -3376,7 +3376,7 @@ var useStyles$6 = makeStyles()(function (_a) {
 });
 
 var ProgressBar = function (props) {
-    var current = props.current, max = props.max, _a = props.width, width = _a === void 0 ? 300 : _a, _b = props.color, color = _b === void 0 ? '#50C0E8' : _b, className = props.className;
+    var current = props.current, max = props.max, _a = props.width, width = _a === void 0 ? 100 : _a, _b = props.color, color = _b === void 0 ? '#50C0E8' : _b, className = props.className;
     var classes = useStyles$6().classes;
     return (jsxRuntime.jsxs("div", __assign({ className: classnames$1(classes.progressbar, className) }, { children: [jsxRuntime.jsx("div", __assign({ className: classes.progressbarWrapper, style: { width: width } }, { children: jsxRuntime.jsx("span", { className: classes.progressInnerWrapper, style: {
                         width: "".concat(current / max * 100, "%"),
@@ -3459,9 +3459,9 @@ var useStyles$4 = makeStyles()(function (_a) {
 
 var SkillsAverageItem = function (props) {
     var classes = useStyles$4().classes;
-    var max = props.max, current = props.current, text = props.text, isMobile = props.isMobile, isPercent = props.isPercent;
+    var max = props.max, current = props.current, text = props.text, isMobile = props.isMobile, isPercent = props.isPercent, className = props.className;
     var value = isPercent ? "".concat(current / max * 100, "%") : "".concat(current, "/").concat(max);
-    return (jsxRuntime.jsxs("div", __assign({ className: classes.skillsAverageItem }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.text }, { children: text })), !isMobile && (jsxRuntime.jsx(jsxRuntime.Fragment, { children: jsxRuntime.jsxs("p", __assign({ className: classes.text }, { children: ["Average index:", jsxRuntime.jsxs("span", { children: ["\u00A0", value] })] })) })), isMobile && jsxRuntime.jsxs("span", { children: ["\u00A0", value] })] })));
+    return (jsxRuntime.jsxs("div", __assign({ className: classnames$1(classes.skillsAverageItem, className) }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.text }, { children: text })), !isMobile && (jsxRuntime.jsx(jsxRuntime.Fragment, { children: jsxRuntime.jsxs("p", __assign({ className: classes.text }, { children: ["Average index:", jsxRuntime.jsxs("span", { children: ["\u00A0", value] })] })) })), isMobile && jsxRuntime.jsxs("span", { children: ["\u00A0", value] })] })));
 };
 
 var useStyles$3 = makeStyles()(function (_a) {
@@ -3508,8 +3508,8 @@ var useStyles$3 = makeStyles()(function (_a) {
 
 var SkillWithProgress = function (props) {
     var classes = useStyles$3().classes;
-    var text = props.text, max = props.max, current = props.current;
-    return (jsxRuntime.jsxs("div", __assign({ className: classes.skillWithProgress }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.text }, { children: text })), jsxRuntime.jsx(ProgressBar, { current: current, max: max })] })));
+    var text = props.text, max = props.max, current = props.current, className = props.className, progressWidth = props.progressWidth;
+    return (jsxRuntime.jsxs("div", __assign({ className: classnames$1(classes.skillWithProgress, className) }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.text }, { children: text })), jsxRuntime.jsx(ProgressBar, { width: progressWidth, current: current, max: max })] })));
 };
 
 var useStyles$2 = makeStyles()(function () { return ({
