@@ -3070,7 +3070,7 @@ var useTheme = function () { return ({
 }); };
 var makeStyles = tssReact_7({ useTheme: useTheme }).makeStyles;
 
-var useStyles$7 = makeStyles()(function (_a) {
+var useStyles$b = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         mostButton: {
@@ -3090,11 +3090,11 @@ var useStyles$7 = makeStyles()(function (_a) {
 
 var Button = function (props) {
     var children = props.children, className = props.className, rest = __rest(props, ["children", "className"]);
-    var classes = useStyles$7().classes;
+    var classes = useStyles$b().classes;
     return (jsxRuntime.jsx("button", __assign({}, rest, { className: classnames$1(classes.mostButton, className) }, { children: children })));
 };
 
-var useStyles$6 = makeStyles()(function (_a) {
+var useStyles$a = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         dialogWrapper: {
@@ -3164,7 +3164,7 @@ var useStyles$6 = makeStyles()(function (_a) {
                 width: '1px',
                 height: '15px',
                 position: 'absolute',
-                content: '',
+                content: '""',
                 transform: 'rotate(45deg)',
             },
             '&::after': {
@@ -3172,7 +3172,7 @@ var useStyles$6 = makeStyles()(function (_a) {
                 width: '1px',
                 height: '15px',
                 position: 'absolute',
-                content: '',
+                content: '""',
                 transform: 'rotate(-45deg)',
             }
         }
@@ -3182,7 +3182,7 @@ var useStyles$6 = makeStyles()(function (_a) {
 var Dialog = function (props) {
     var _a;
     var text = props.text, _b = props.confirmText, confirmText = _b === void 0 ? 'Accept' : _b, _c = props.rejectText, rejectText = _c === void 0 ? 'Decline' : _c, isOpen = props.isOpen, className = props.className, close = props.close, onConfirmAction = props.onConfirmAction, onRejectAction = props.onRejectAction;
-    var classes = useStyles$6().classes;
+    var classes = useStyles$a().classes;
     var handleConfirm = function () {
         if (onConfirmAction) {
             onConfirmAction();
@@ -3201,7 +3201,7 @@ var Dialog = function (props) {
             _a)) }, { children: jsxRuntime.jsxs("div", __assign({ className: classes.dialogContent }, { children: [jsxRuntime.jsx("span", { className: classes.close, onClick: close }), jsxRuntime.jsx("p", __assign({ className: classes.text }, { children: text })), jsxRuntime.jsxs("div", __assign({ className: classes.actionWrapper }, { children: [jsxRuntime.jsx("button", __assign({ onClick: handleConfirm }, { children: confirmText })), jsxRuntime.jsx("button", __assign({ onClick: handleReject }, { children: rejectText }))] }))] })) })));
 };
 
-var useStyles$5 = makeStyles()(function (_a) {
+var useStyles$9 = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         input: {
@@ -3229,12 +3229,12 @@ var useStyles$5 = makeStyles()(function (_a) {
 
 var Input = function (_a) {
     var inputProps = _a.inputProps, value = _a.value, onChange = _a.onChange;
-    var classes = useStyles$5().classes;
+    var classes = useStyles$9().classes;
     var className = inputProps.className, type = inputProps.type, placeholder = inputProps.placeholder, onFocus = inputProps.onFocus, onBlur = inputProps.onBlur, disabled = inputProps.disabled;
     return (jsxRuntime.jsx("input", { type: type, placeholder: placeholder, onChange: onChange, onFocus: onFocus, onBlur: onBlur, value: value, disabled: disabled, className: classnames$1(classes.input, className) }));
 };
 
-var useStyles$4 = makeStyles()(function (_a) {
+var useStyles$8 = makeStyles()(function (_a) {
     var palette = _a.palette; _a.spacing; var mostFont = _a.mostFont;
     return ({
         inputWrapper: {
@@ -3263,11 +3263,11 @@ var useStyles$4 = makeStyles()(function (_a) {
 
 var InputWrapper = function (props) {
     var error = props.error, label = props.label, isTouched = props.isTouched, children = props.children, className = props.className, value = props.value;
-    var classes = useStyles$4().classes;
+    var classes = useStyles$8().classes;
     return (jsxRuntime.jsxs("div", __assign({ className: classnames$1(className, classes.inputWrapper) }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.label }, { children: label })), children, (error && value && isTouched) && error.map(function (item, idx) { return (jsxRuntime.jsx("p", __assign({ className: classes.error }, { children: item }), idx)); })] })));
 };
 
-var useStyles$3 = makeStyles()(function (_a) {
+var useStyles$7 = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         input: {
@@ -3325,7 +3325,7 @@ var PasswordField = function (props) {
     var _a;
     var inputProps = props.inputProps, error = props.error, onChange = props.onChange, value = props.value;
     var type = inputProps.type, className = inputProps.className, rest = __rest(inputProps, ["type", "className"]);
-    var classes = useStyles$3().classes;
+    var classes = useStyles$7().classes;
     var _b = React.useState(false), isPasswordVisible = _b[0], setIsPasswordVisible = _b[1];
     var _c = React.useState(type || 'text'), fieldType = _c[0], setFieldType = _c[1];
     var passwordToggleType = React.useCallback(function () {
@@ -3345,7 +3345,7 @@ var PasswordField = function (props) {
                     _a)), onClick: passwordToggleType })] })));
 };
 
-var useStyles$2 = makeStyles()(function (_a) {
+var useStyles$6 = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         progressbar: {
@@ -3377,7 +3377,7 @@ var useStyles$2 = makeStyles()(function (_a) {
 
 var ProgressBar = function (props) {
     var current = props.current, max = props.max, _a = props.width, width = _a === void 0 ? 300 : _a, _b = props.color, color = _b === void 0 ? '#50C0E8' : _b, className = props.className;
-    var classes = useStyles$2().classes;
+    var classes = useStyles$6().classes;
     return (jsxRuntime.jsxs("div", __assign({ className: classnames$1(classes.progressbar, className) }, { children: [jsxRuntime.jsx("div", __assign({ className: classes.progressbarWrapper, style: { width: width } }, { children: jsxRuntime.jsx("span", { className: classes.progressInnerWrapper, style: {
                         width: "".concat(current / max * 100, "%"),
                         backgroundColor: color
@@ -3390,7 +3390,7 @@ var WhiteSearchIcon = function () { return (jsxRuntime.jsxs("svg", __assign({ wi
 /*eslint-disable max-len*/
 var SearchIcon = function () { return (jsxRuntime.jsxs("svg", __assign({ width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, { children: [jsxRuntime.jsx("path", { d: "M15.7138 6.8382C18.1647 9.28913 18.1647 13.2629 15.7138 15.7138C13.2629 18.1647 9.28913 18.1647 6.8382 15.7138C4.38727 13.2629 4.38727 9.28913 6.8382 6.8382C9.28913 4.38727 13.2629 4.38727 15.7138 6.8382", stroke: "#85888B", strokeLinecap: "round", strokeLinejoin: "round" }), jsxRuntime.jsx("path", { d: "M19 19L15.71 15.71", stroke: "#85888B", strokeLinecap: "round", strokeLinejoin: "round" })] }))); };
 
-var useStyles$1 = makeStyles()(function (_a) {
+var useStyles$5 = makeStyles()(function (_a) {
     var palette = _a.palette, spacing = _a.spacing;
     return ({
         searchWrapper: {
@@ -3413,11 +3413,142 @@ var useStyles$1 = makeStyles()(function (_a) {
 
 var SearchField = function (props) {
     var color = props.color, onButtonClick = props.onButtonClick, className = props.className, rest = __rest(props, ["color", "onButtonClick", "className"]);
-    var classes = useStyles$1().classes;
+    var classes = useStyles$5().classes;
     return (jsxRuntime.jsxs("div", __assign({ className: classnames$1(classes.searchWrapper, className) }, { children: [jsxRuntime.jsx("span", __assign({ onClick: onButtonClick, className: classes.searchIcon }, { children: color === 'white' ?
                     jsxRuntime.jsx(WhiteSearchIcon, {})
                     :
                         jsxRuntime.jsx(SearchIcon, {}) })), jsxRuntime.jsx("input", __assign({}, rest, { className: classes.searchInput }))] })));
+};
+
+var useStyles$4 = makeStyles()(function (_a) {
+    var palette = _a.palette; _a.spacing; var fontWeights = _a.fontWeights;
+    return ({
+        skillsAverageItem: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginBottom: '4px',
+        },
+        text: {
+            margin: 0,
+            fontSize: '14px',
+            color: palette.textColorLightGrey,
+            whiteSpace: 'nowrap',
+            span: {
+                color: palette.secondaryBlack,
+                fontWeight: fontWeights.semiBold,
+            }
+        }
+        // @media screen and (max-width: $md-xs-media) {
+        // .skillsAverageItem {
+        //     display: flex;
+        //     justify-content: flex-start;
+        //     margin-bottom: 2px;
+        //
+        //   .text {
+        //       font-size: 12px;
+        //       color: $secondaryBlack;
+        //     }
+        //     span {
+        //       font-size: 12px;
+        //       color: $secondaryBlack;
+        //     }
+        //   }
+        // }
+    });
+});
+
+var SkillsAverageItem = function (props) {
+    var classes = useStyles$4().classes;
+    var max = props.max, current = props.current, text = props.text, isMobile = props.isMobile, isPercent = props.isPercent;
+    var value = isPercent ? "".concat(current / max * 100, "%") : "".concat(current, "/").concat(max);
+    return (jsxRuntime.jsxs("div", __assign({ className: classes.skillsAverageItem }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.text }, { children: text })), !isMobile && (jsxRuntime.jsx(jsxRuntime.Fragment, { children: jsxRuntime.jsxs("p", __assign({ className: classes.text }, { children: ["Average index:", jsxRuntime.jsxs("span", { children: ["\u00A0", value] })] })) })), isMobile && jsxRuntime.jsxs("span", { children: ["\u00A0", value] })] })));
+};
+
+var useStyles$3 = makeStyles()(function (_a) {
+    var palette = _a.palette; _a.spacing; var fontWeights = _a.fontWeights;
+    return ({
+        skillWithProgress: {
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            '&:not(last-child)': {
+                marginBottom: '4px',
+            },
+            progressbar: {
+                '&-text': {
+                    fontSize: '14px',
+                    width: '13px',
+                    fontWeight: fontWeights.semiBold,
+                }
+            }
+        },
+        text: {
+            margin: 0,
+            fontSize: '14px',
+            color: palette.textColorLightGrey,
+            whiteSpace: 'nowrap',
+        },
+        // @media screen and (max-width: $md-xs-media) {
+        // .skillWithProgress {
+        //     width: 100%;
+        //     display: flex;
+        //     justify-content: space-between;
+        //     margin-bottom: 6px;
+        //
+        //   .progressbar {
+        //     &-text {
+        //         font-size: 12px;
+        //         font-weight: $semiBold;
+        //       }
+        //     }
+        //   }
+        // }
+    });
+});
+
+var SkillWithProgress = function (props) {
+    var classes = useStyles$3().classes;
+    var text = props.text, max = props.max, current = props.current;
+    return (jsxRuntime.jsxs("div", __assign({ className: classes.skillWithProgress }, { children: [jsxRuntime.jsx("p", __assign({ className: classes.text }, { children: text })), jsxRuntime.jsx(ProgressBar, { current: current, max: max })] })));
+};
+
+var useStyles$2 = makeStyles()(function () { return ({
+    userCardInfo: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'space-between',
+    }
+}); });
+
+var UserCardInfo = function (_a) {
+    var children = _a.children, className = _a.className;
+    var classes = useStyles$2().classes;
+    return (jsxRuntime.jsx("div", __assign({ className: classnames$1(classes.userCardInfo, className) }, { children: children })));
+};
+
+var useStyles$1 = makeStyles()(function (_a) {
+    var palette = _a.palette, spacing = _a.spacing;
+    return ({
+        userCardWrapper: {
+            padding: '11px 20px 11px 11px',
+            display: 'flex',
+            alignItems: 'center',
+            overflow: 'hidden',
+            backgroundColor: palette.white,
+            borderRadius: spacing.sm,
+            borderTop: "1px solid ".concat(palette.superLightGrey),
+            height: '91px',
+            '> *': {
+                padding: '0 15px',
+            }
+        }
+    });
+});
+
+var UserCardWrapper = function (_a) {
+    var children = _a.children, className = _a.className;
+    var classes = useStyles$1().classes;
+    return (jsxRuntime.jsx("div", __assign({ className: classnames$1(classes.userCardWrapper, className) }, { children: children })));
 };
 
 var useStyles = makeStyles()(function () { return ({
@@ -3442,7 +3573,11 @@ exports.InputWrapper = InputWrapper;
 exports.PasswordField = PasswordField;
 exports.ProgressBar = ProgressBar;
 exports.SearchField = SearchField;
+exports.SkillWithProgress = SkillWithProgress;
+exports.SkillsAverageItem = SkillsAverageItem;
+exports.UserCardInfo = UserCardInfo;
 exports.UserCardInfoSection = CardInfoSection;
+exports.UserCardWrapper = UserCardWrapper;
 exports.buildFormData = buildFormData;
 exports.createAction = createAction;
 exports.createReducer = createReducer;

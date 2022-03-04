@@ -1,5 +1,5 @@
 declare const useStyles: (params: void) => {
-    classes: Record<"text" | "skillWithProgress", string>;
+    classes: Record<"skillWithProgress" | "text", string>;
     theme: import("../../styles/types").ITheme;
     css: import("tss-react").Css;
     cx: import("tss-react").Cx;
