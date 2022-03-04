@@ -58,12 +58,27 @@ const useStyles = makeStyles()(
       },
     },
     close: {
-      '&::after': {
-        top: '15px',
-        right: '15px',
+      cursor: 'pointer',
+      position: 'absolute',
+      right: '21px',
+      top: '17px',
+      width: '15px',
+      height: '15px',
+      '&::before': {
+        backgroundColor: palette.secondaryBlack,
+        width: '1px',
+        height: '15px',
         position: 'absolute',
-        content: 'X',
-        cursor: 'pointer'
+        content: '',
+        transform: 'rotate(45deg)',
+      },
+      '&::after': {
+        backgroundColor: palette.secondaryBlack,
+        width: '1px',
+        height: '15px',
+        position: 'absolute',
+        content: '',
+        transform: 'rotate(-45deg)',
       }
     }
   })
