@@ -1,4 +1,6 @@
 export interface ISkillWithProgress {
+  progressWidth?: number;
+  className?: string;
   text?: string;
   current: number;
   max: number

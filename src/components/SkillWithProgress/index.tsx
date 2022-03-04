@@ -1,3 +1,5 @@
+import cn from 'classnames';
+
 import ProgressBar from '../ProgressBar';
 
 import { ISkillWithProgress } from './types';
@@ -5,11 +7,11 @@ import useStyles from './styles';
 
 const SkillWithProgress = (props: ISkillWithProgress): JSX.Element => {
   const { classes } = useStyles();
-  const { text, max, current } = props;
+  const { text, max, current, className, progressWidth } = props;
   return (
-    <div className={classes.skillWithProgress}>
+    <div className={cn(classes.skillWithProgress, className)}>
       <p className={classes.text}>{text}</p>
-      <ProgressBar current={current} max={max}/>
+      <ProgressBar width={progressWidth} current={current} max={max}/>
     </div>
   );
 };

@@ -1,13 +1,15 @@
+import cn from 'classnames';
+
 import { ISkillsAverage } from './types';
 import useStyles from './styles';
 
 const SkillsAverageItem = (props: ISkillsAverage): JSX.Element => {
   const { classes } = useStyles();
-  const { max, current, text, isMobile, isPercent } = props;
+  const { max, current, text, isMobile, isPercent, className } = props;
   const value = isPercent ? `${current / max * 100}%` : `${current}/${max}`;
 
   return (
-    <div className={classes.skillsAverageItem}>
+    <div className={cn(classes.skillsAverageItem, className)}>
       <p className={classes.text}>{text}</p>
       {!isMobile && (
         <>
