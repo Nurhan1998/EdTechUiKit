@@ -69,7 +69,7 @@ var useStyles = makeStyles()(function (_a) {
                 width: '1px',
                 height: '15px',
                 position: 'absolute',
-                content: '',
+                content: '""',
                 transform: 'rotate(45deg)',
             },
             '&::after': {
@@ -77,7 +77,7 @@ var useStyles = makeStyles()(function (_a) {
                 width: '1px',
                 height: '15px',
                 position: 'absolute',
-                content: '',
+                content: '""',
                 transform: 'rotate(-45deg)',
             }
         }
