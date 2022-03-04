@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.js","sourceRoot":"","sources":["../../../src/components/UserCardInfo/styles.ts"],"names":[],"mappings":"AAAA,OAAO,UAAU,MAAM,QAAQ,CAAC;AAEhC,IAAM,SAAS,GAAG,UAAU,EAAE,CAC5B,cAAM,OAAA,CAAC;IACL,YAAY,EAAE;QACZ,KAAK,EAAE,MAAM;QACb,OAAO,EAAE,MAAM;QACf,cAAc,EAAE,eAAe;KAChC;CACF,CAAC,EANI,CAMJ,CACH,CAAC;AACF,eAAe,SAAS,CAAC"}
